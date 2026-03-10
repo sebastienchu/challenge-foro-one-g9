@@ -1,0 +1,129 @@
+/* /* ========================================
+   TU CSS ORIGINAL EXACTO (SIN NADA NUEVO)
+======================================== */
+.admin-container {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.admin-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+header {
+  margin-bottom: 0;
+}
+
+.dashboard-section {
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.dashboard-header-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.usuarios-header {
+  grid-column: 1 / 4;
+  text-align: center;
+}
+
+.topicos-header {
+  grid-column: 4 / 7;
+  text-align: center;
+}
+
+.dashboard-cards-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+}
+
+.stat-card {
+  padding: 0.75rem 0.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.stat-info h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0.2rem 0 0.05rem;
+}
+
+.stat-info p {
+  font-size: 0.75rem;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+[data-theme="dark"] .stat-info h3 {
+  color: #60a5fa;
+}
+
+[data-theme="light"] .stat-info h3 {
+  color: #111827;
+}
+
+[data-theme="dark"] .stat-card {
+  background: #1f2933;
+  border: 1px solid #4b5563;
+  color: #e5e7eb;
+}
+
+[data-theme="light"] .stat-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header-row {
+    grid-template-columns: 1fr;
+  }
+  .usuarios-header,
+  .topicos-header {
+    grid-column: 1 / 2;
+  }
+  .dashboard-cards-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   SOLO BOTONES NAV - SIN TOCAR HEADER
+======================================== */
+.nav-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+  margin: 0;
+}
+
+.nav-btn.active,
+.nav-btn:hover {
+  background: var(--primary, #3b82f6);
+  color: white !important;
+}
