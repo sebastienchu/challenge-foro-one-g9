@@ -1,0 +1,227 @@
+/* =========================
+   USERS ADMIN OPTIMIZED REAL TABLE
+========================= */
+
+.users-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ---------- FORM ---------- */
+.form-section {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.form-section h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.form-section label {
+  display: block;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-section input,
+.form-section select,
+.form-section textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  box-sizing: border-box;
+}
+
+.form-section input:focus,
+.form-section select:focus,
+.form-section textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+.form-section button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: blue;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.form-section button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1.5rem;
+}
+
+/* ---------- TABLE ---------- */
+.table-section {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  overflow-x: auto;
+}
+
+.table-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+#usersTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem; /* espacio entre filas */
+}
+
+#usersTable thead th {
+  background-color: blue; /* título sólido */
+  color: white;
+  padding: 12px;
+  text-align: left;
+  border-radius: 8px 8px 0 0;
+}
+
+#usersTable th,
+#usersTable td {
+  padding: 0.8rem 1rem;
+  font-size: 1.125rem;
+  text-align: left;
+}
+
+#usersTable tbody tr {
+  background: var(--card-bg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+#usersTable tbody tr:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 2;
+}
+
+#usersTable td {
+  position: relative; /* importante para acciones desplegables */
+}
+
+/* ---------- ROLES ---------- */
+.role-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #fff;
+  margin-right: 0.2rem;
+}
+
+.role-user { background: #1976d2; }
+.role-admin { background: #d32f2f; }
+.role-super { background: #9c27b0; }
+.role-coordinator { background: #f57c00; }
+
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.status-active { background: #4caf50; }
+.status-inactive { background: #f44336; }
+
+/* ---------- ACCIONES ---------- */
+.actions-cell {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  gap: 0.5rem;             /* espacio entre botones */
+}
+
+.actions-cell .edit,
+.actions-cell .delete {
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.actions-cell .edit {
+  background-color: transparent;
+}
+
+.actions-cell .edit:hover {
+  background-color: #1565c0;
+}
+
+.actions-cell .delete {
+  background-color: transparent;
+}
+
+.actions-cell .delete:hover {
+  background-color: #b71c1c;
+}
+
+
+/* ---------- DARK MODE ---------- */
+[data-theme='dark'] .form-section,
+[data-theme='dark'] .table-section { background: #1e1e1e; color: #e0e0e0; }
+[data-theme='dark'] .form-section label { color: #e0e0e0; }
+[data-theme='dark'] .form-section input,
+[data-theme='dark'] .form-section select,
+[data-theme='dark'] .form-section textarea { background: #2b2b2b; color: #e0e0e0; border:1px solid #555; }
+[data-theme='dark'] .form-section input:focus,
+[data-theme='dark'] .form-section select:focus,
+[data-theme='dark'] .form-section textarea:focus { border-color:#90caf9; box-shadow:0 0 0 2px rgba(144,202,249,0.4); }
+
+[data-theme='dark'] #usersTable tbody button.edit:hover { color: #90caf9; }
+[data-theme='dark'] #usersTable tbody button.delete:hover { color: #ef9a9a; }
+[data-theme='dark'] .actions-menu { background: #2b2b2b; }
+
+/* ---------- PAGINACIÓN ---------- */
+#pagination { margin-top: 1.5rem; text-align: center; }
+#pagination button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  margin: 0 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#pagination button:disabled { background-color: #e0e0e0; cursor: not-allowed; }
+[data-theme='dark'] #pagination button:disabled { background-color: #555; color:#ccc; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .users-layout { grid-template-columns: 1fr; }
+  #usersTable th,
+  #usersTable td { display: block; width: 100%; padding: 0.8rem; }
+}
