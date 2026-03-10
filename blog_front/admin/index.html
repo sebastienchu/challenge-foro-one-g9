@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Admin</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./css/admin.css">
+  <link rel="stylesheet" href="./css/users.css">
+  <link rel="stylesheet" href="./css/topicos.css">
+</head>
+
+<body>
+  <header>
+    <!-- ✅ NAV MEJORADO CON CLASE admin-nav -->
+    <nav id="mainMenu" class="admin-nav">
+      <button class="nav-btn home-btn" data-action="home">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Inicio</span>
+      </button>
+
+      <button class="nav-btn dashboard-btn active" data-action="dashboard">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Dashboard</span>
+      </button>
+
+      <button class="nav-btn users-btn" data-action="users" data-view="users">
+        <span class="nav-icon">👥</span>
+        <span class="nav-text">Usuarios</span>
+      </button>
+
+      <button class="nav-btn topics-btn" data-action="topicos" data-view="topicos">
+        <span class="nav-icon">💬</span>
+        <span class="nav-text">Tópicos</span>
+      </button>
+    </nav>
+
+    <div class="auth-theme-container">
+      <div id="authLinks">
+        <a id="loginLink" href="login.html">Iniciar sesión</a>
+        <a id="registerLink" href="register.html">Registrar</a>
+        <button id="logoutBtn">Cerrar sesión</button>
+      </div>
+      <button id="themeToggle" class="theme-toggle"></button>
+    </div>
+  </header>
+
+  <main class="admin-container">
+    <h2>Panel de Administración</h2>
+
+    
+    <div class="dashboard-section">
+  <!-- Fila de títulos -->
+  <div class="dashboard-header-row">
+    <div class="header-col usuarios-header">USUARIOS</div>
+    <div class="header-col topicos-header">TOPICOS</div>
+  </div>
+
+  <!-- Fila de cards -->
+  <div class="dashboard-cards-row">
+    <!-- USUARIOS -->
+    <div class="stat-card activo">
+      <div class="stat-icon">👤</div>
+      <div class="stat-info">
+        <h3 id="usuarios-activos-count">0</h3>
+        <p>ACTIVOS</p>
+      </div>
+    </div>
+    <div class="stat-card inactivo">
+      <div class="stat-icon">⏸️</div>
+      <div class="stat-info">
+        <h3 id="usuarios-inactivos-count">0</h3>
+        <p>INACTIVOS</p>
+      </div>
+    </div>
+    <div class="stat-card admin">
+      <div class="stat-icon">👑</div>
+      <div class="stat-info">
+        <h3 id="usuarios-admin-count">0</h3>
+        <p>ADMINS</p>
+      </div>
+    </div>
+
+    <!-- TÓPICOS -->
+    <div class="stat-card abierto">
+      <div class="stat-icon">🔓</div>
+      <div class="stat-info">
+        <h3 id="abiertos-count">0</h3>
+        <p>ABIERTOS</p>
+      </div>
+    </div>
+    <div class="stat-card cerrado">
+      <div class="stat-icon">🔒</div>
+      <div class="stat-info">
+        <h3 id="cerrados-count">0</h3>
+        <p>CERRADOS</p>
+      </div>
+    </div>
+    <div class="stat-card eliminado">
+      <div class="stat-icon">🗑️</div>
+      <div class="stat-info">
+        <h3 id="eliminados-count">0</h3>
+        <p>ELIMINADOS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- CONTENIDO DINÁMICO -->
+    <section id="adminContent"></section>
+  </main>
+
+  <!-- JS: ORDEN CORREGIDO -->
+  <script defer src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="../js/themes.js"></script>
+  <script defer src="../js/auth.js"></script>
+  <script defer src="js/admin.js"></script>
+</body>
+
+</html>
