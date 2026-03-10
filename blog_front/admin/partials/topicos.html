@@ -1,0 +1,80 @@
+<section id="topicosView">
+  <h3>Gestión de Tópicos</h3>
+
+  <!-- ✅ BOTÓN NUEVO TÓPICO -->
+  <div class="table-header">
+    <button id="newTopicoBtn" class="btn-primary">➕ Nuevo Tópico</button>
+  </div>
+
+  <!-- TABLA DE TÓPICOS - AHORA MÁS GRANDE -->
+  <div class="table-container">
+    <table id="postsTable">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Mensaje</th>
+          <th>Autor</th>
+          <th>Curso</th>
+          <th>Creado</th>
+          <th>Actualizado</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="8" style="text-align: center;">Cargando...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PAGINACIÓN -->
+  <div class="pagination">
+    <button id="prevPage" onclick="prevPage()">Anterior</button>
+    <button id="nextPage" onclick="nextPage()">Siguiente</button>
+  </div>
+
+  <!-- ✅ MODAL CREAR/EDITAR -->
+  <div id="topicoModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">Nuevo Tópico</h3>
+        <span class="close" id="closeModal">&times;</span>
+      </div>
+      
+      <form id="topicoForm" class="admin-form">
+        <input type="hidden" id="topicoId">
+        
+        <div class="form-group">
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="curso">Curso:</label>
+          <input type="text" id="curso" required>
+        </div>
+
+        <div class="form-group">
+          <label for="status">Estado:</label>
+          <select id="status">
+            <option value="ABIERTO">Abierto</option>
+            <option value="CERRADO">Cerrado</option>
+            <option value="ELIMINADO">Eliminado</option>
+          </select>
+        </div>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary">Guardar</button>
+          <button type="button" class="btn-secondary" id="cancelModal">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
